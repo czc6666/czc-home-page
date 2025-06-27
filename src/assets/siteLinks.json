@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "Seedling",
+    "name": "czc的数字花园",
+    "link": "https://garden.czchx.cc"
+  },
+  {
+    "icon": "Compass",
+    "name": "职业指南针",
+    "link": "https://jobhelp.online"
+  },
+  {
+    "icon": "Images",
+    "name": "图片工具站",
+    "link": "https://pixtool.top"
+  },
+  {
+    "icon": "Gamepad",
+    "name": "桌宠收集站",
+    "link": "https://pixpals.xyz"
+  },
+  {
+    "icon": "DiceD6",
+    "name": "小游戏站",
+    "link": "https://game.czchx.cc"
+  }
+]
