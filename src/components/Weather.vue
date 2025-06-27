@@ -115,6 +115,8 @@ const onError = (message) => {
 
 onMounted(() => {
   // 调用获取天气
-  getWeatherData();
+  nextTick(() => {
+    getWeatherData();
+  });
 });
 </script>
