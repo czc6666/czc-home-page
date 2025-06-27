@@ -53,48 +53,17 @@ const getTemperature = (min, max) => {
 // 获取天气数据
 const getWeatherData = async () => {
   try {
-    // 获取地理位置信息
-    if (!mainKey) {
-      console.log("未配置，使用备用天气接口");
-      const result = await getOtherWeather();
-      console.log(result);
-      const data = result.result;
-      weatherData.adCode = {
-        city: data.city.City || "未知地区",
-        // adcode: data.city.cityId,
-      };
-      weatherData.weather = {
-        weather: data.condition.day_weather,
-        temperature: getTemperature(data.condition.min_degree, data.condition.max_degree),
-        winddirection: data.condition.day_wind_direction,
-        windpower: data.condition.day_wind_power,
-      };
-    } else {
-      // 获取 Adcode
-      const adCode = await getAdcode(mainKey);
-      console.log(adCode);
-      if (adCode.infocode !== "10000") {
-        throw "地区查询失败";
-      }
-      // 本地开发环境无法获取 IP 定位，使用默认城市
-      if (!adCode.adcode || adCode.adcode.length === 0) {
-        console.warn("无法通过 IP 定位获取城市代码，将使用默认城市进行天气查询");
-        adCode.city = "北京市";
-        adCode.adcode = "110000";
-      }
-      weatherData.adCode = {
-        city: adCode.city,
-        adcode: adCode.adcode,
-      };
-      // 获取天气信息
-      const result = await getWeather(mainKey, weatherData.adCode.adcode);
-      weatherData.weather = {
-        weather: result.lives[0].weather,
-        temperature: result.lives[0].temperature,
-        winddirection: result.lives[0].winddirection,
-        windpower: result.lives[0].windpower,
-      };
-    }
+    const result = await getOtherWeather();
+    const data = result.result;
+    weatherData.adCode = {
+      city: data.city.City || "未知地区",
+    };
+    weatherData.weather = {
+      weather: data.condition.day_weather,
+      temperature: getTemperature(data.condition.min_degree, data.condition.max_degree),
+      winddirection: data.condition.day_wind_direction,
+      windpower: data.condition.day_wind_power,
+    };
   } catch (error) {
     console.error("天气信息获取失败:" + error);
     onError("天气信息获取失败");
