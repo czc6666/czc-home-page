@@ -23,5 +23,15 @@
     "icon": "DiceD6",
     "name": "小游戏站",
     "link": "https://game.czchx.cc"
+  },
+  {
+    "icon": "CompactDisc",
+    "name": "混音工具站",
+    "link": "https://haptic.czchx.cc"
+  },
+  {
+    "icon": "Heart",
+    "name": "SoulSketch",
+    "link": "https://soulmatesketch.online"
   }
 ]

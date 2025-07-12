@@ -53,6 +53,8 @@ import {
   Compass,
   DiceD6,
   Seedling,
+  CompactDisc,
+  Heart,
 } from "@vicons/fa"; // 注意使用正确的类别
 import { mainStore } from "@/store";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -78,6 +80,8 @@ const siteIcon = {
   Compass,
   DiceD6,
   Seedling,
+  CompactDisc,
+  Heart,
 };
 
 // 链接跳转

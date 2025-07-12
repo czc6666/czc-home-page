@@ -75,7 +75,13 @@ export const getWeather = async (key, city) => {
 
 // 获取教书先生天气 API
 // https://api.oioweb.cn/doc/weather/GetWeather
-export const getOtherWeather = async () => {
-  const res = await fetch("https://api.oioweb.cn/api/weather/GetWeather");
+export const getOtherWeather = async (city) => {
+  const res = await fetch(`https://api.oioweb.cn/api/weather/GetWeather?city_name=${city}`);
+  return await res.json();
+};
+
+// 获取 IP 地址信息
+export const getIpInfo = async () => {
+  const res = await fetch("https://ip-api.com/json");
   return await res.json();
 };

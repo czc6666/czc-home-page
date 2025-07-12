@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { getAdcode, getWeather, getOtherWeather } from "@/api";
+import { getOtherWeather, getIpInfo } from "@/api";
 import { Error } from "@icon-park/vue-next";
 
 // 高德开发者 Key
@@ -53,7 +53,8 @@ const getTemperature = (min, max) => {
 // 获取天气数据
 const getWeatherData = async () => {
   try {
-    const result = await getOtherWeather();
+    const ipInfo = await getIpInfo();
+    const result = await getOtherWeather(ipInfo.city);
     const data = result.result;
     weatherData.adCode = {
       city: data.city.City || "未知地区",
@@ -84,8 +85,6 @@ const onError = (message) => {
 
 onMounted(() => {
   // 调用获取天气
-  nextTick(() => {
-    getWeatherData();
-  });
+  getWeatherData();
 });
 </script>
