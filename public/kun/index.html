@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#070909"><meta name="description" content="把时间还给生活。坤时：一个可以变成抽象粒子肖像的下班倒计时。北京时间 18:30，1 坤时 = 150 分钟。">
+<meta name="theme-color" content="#070909"><meta name="description" content="把时间还给生活。坤时：一个拥有动态光效的下班倒计时。北京时间 18:30，1 坤时 = 150 分钟。">
 <title>坤时 · 把时间还给生活</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23070909'/%3E%3Cpath d='M20 15v34m25-34L26 32l19 17' stroke='%23ddff78' stroke-width='7' fill='none'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="v4.css">
@@ -13,7 +13,7 @@
  <div class="identity"><span class="logotype">k<span>·</span></span><div><strong>坤时</strong><small>TIME, ON YOUR SIDE.</small></div></div>
  <div class="live"><span class="live-tag"><i></i> 北京时间</span><time id="clock">--:--:--</time><button class="icon-button" id="settings" aria-label="设置上下班时间" title="班表设置"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></svg></button></div>
  <section class="readout" aria-label="下班倒计时">
-  <div class="eyeline"><span class="signal"></span><span id="context">距离下班</span><span class="edition">NO. 04</span></div>
+  <div class="eyeline"><span class="signal"></span><span id="context">距离下班</span><span class="edition">NO. 04.1</span></div>
   <h1>把时间，<br><span>还给自己。</span></h1>
   <div class="digits" id="digits"><span id="whole">0</span><span class="point">.</span><span id="fraction">000</span></div>
   <div class="free-text" id="free-word">OFF<br><em>DUTY.</em></div>
@@ -22,12 +22,11 @@
   <div class="destination"><span class="destination-line"></span><span>下一站</span><b id="destination">18:30</b><span id="destination-copy">你的生活</span></div>
  </section>
  <button class="art-hit" id="art-hit" aria-label="拖动旋转粒子装置，轻点打散重组" title="拖动旋转 · 轻点重组"></button>
- <div class="art-note" aria-live="polite"><span id="art-number">01 / 07</span><strong id="art-name">流光</strong><span id="art-subtitle">LIGHT IN MOTION</span></div>
+ <div class="art-note" aria-live="polite"><span id="art-number">01 / 06</span><strong id="art-name">流光</strong><span id="art-subtitle">LIGHT IN MOTION</span></div>
  <div class="art-foot"><span class="cross">＋</span><span id="art-tip">拖动旋转 · 轻点重组</span><span class="hairline"></span></div>
  <div class="preview-badge" id="preview-badge" hidden><span id="preview-text"></span><button id="back-now">回到现在 ↗</button></div>
  <div class="control-dock" aria-label="切换粒子形态">
   <div class="switcher"><button class="arrow" id="prev" aria-label="上一种形态">←</button><span id="mode-label">流光</span><button class="arrow" id="next" aria-label="下一种形态">→</button></div>
-  <button class="kun-button" id="kun" aria-pressed="false"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 1 2.2 6.8L19 10l-6.8 2.2L10 19l-2.2-6.8L1 10l6.8-2.2Z"/></svg><span id="kun-label">坤化一下</span></button>
   <button class="icon-button more" id="play" aria-label="打开更多玩法" title="更多玩法"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg></button>
  </div>
  <section class="timeline" aria-label="今日班次进度">
@@ -49,12 +48,12 @@
 <dialog id="play-dialog" aria-labelledby="play-title">
  <div class="dialog-title"><div><span class="tiny-label">A LITTLE MORE PLAY</span><h2 id="play-title">给时间，换个形状。</h2></div><button class="icon-button close" data-close aria-label="关闭更多玩法">×</button></div>
  <div class="presets" id="presets"></div>
- <label class="slider-label" for="morph">连续变形 <span id="morph-label">流光</span></label><input id="morph" type="range" min="0" max="6" step="0.01" value="0">
+ <label class="slider-label" for="morph">连续变形 <span id="morph-label">流光</span></label><input id="morph" type="range" min="0" max="5" step="0.01" value="0">
  <label class="slider-label" for="brightness">粒子亮度 <span id="brightness-label">100%</span></label><input id="brightness" type="range" min="0.75" max="1.75" step="0.05" value="1.25">
  <div class="play-actions"><button id="scatter">打散重组 ↗</button><button id="quiet" aria-pressed="false">暂停动态</button><button id="palette">切换光色</button><button id="fullscreen">全屏观看</button></div>
- <p class="help portrait-note">「坤化」为程序生成的中分人物抽象粒子肖像，非真人照片、非官方形象。所有形态均在本地实时计算，不上传数据。</p>
+ <p class="help">六种抽象光效均在本地实时计算。没有人像、外部图片或数据上传。</p>
 </dialog>
 <div class="toast" id="toast" role="status"></div>
 <noscript><div class="noscript">请启用 JavaScript 以显示实时倒计时。</div></noscript>
-<script src="visual-v4.js"></script><script src="app-v4.js"></script>
+<script src="visual-v4.1.js"></script><script src="app-v4.1.js"></script>
 </body></html>
